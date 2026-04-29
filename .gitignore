@@ -1,0 +1,10 @@
+# Node
+node_modules/
+
+# Runtime artefacts
+dump.rdb
+*.log
+
+# Uploaded profile images (runtime, not source)
+forumerly/public/images/profileImages/*
+!forumerly/public/images/profileImages/.gitkeep
