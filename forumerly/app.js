@@ -41,7 +41,8 @@ app
   // Sessions and passport setup
   .use(session({
     store: new RedisStore(options.redis),
-    secret: secrets.session_secret, // So the secret isn't shown in the public repository
+    secret: secrets.session_secret,
+    name: 'sid.fixed',      // distinct cookie name — avoids collision with vulnerable instance on port 3000
     resave: false,
     saveUninitialized: false
   }))

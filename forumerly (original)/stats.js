@@ -5,6 +5,7 @@ const moment = require('moment-timezone')
 
 // Formats all the dates inside of a single object (the object being a single thread)
 function registerVisit(useragent) {
+  if (!mongo.db) return;
 
   mongo.db.collection('clients')
   .insertOne({
@@ -16,7 +17,8 @@ function registerVisit(useragent) {
 }
 
 function getStats(cb){
-  
+  if (!mongo.db) { cb([]); return; }
+
   const groups = {
 
   }
